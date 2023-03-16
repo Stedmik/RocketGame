@@ -5,6 +5,7 @@ public class Movement : MonoBehaviour
 {
     public float speed = 1;
     public float rotationSpeed;
+    public GameObject effects;
 
     private Rigidbody2D rb;
     // Start is called before the first frame update
@@ -19,7 +20,13 @@ public class Movement : MonoBehaviour
         if (Input.GetKey(KeyCode.Space))
         {
             rb.AddForce(transform.up * speed, ForceMode2D.Force);
+            effects.SetActive(true);          
         }
+        else
+        {
+            effects.SetActive(false);
+        }
+
 
         if (Input.GetKey(KeyCode.A))
         {
